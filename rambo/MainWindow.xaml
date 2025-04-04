@@ -1,11 +1,12 @@
 ﻿<Window x:Class="rambo.MainWindow"
+        Icon="../rambo_icon.ico"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:rambo"
         mc:Ignorable="d"
-        Title="smt_memoptx64_rambov3" Height="300" Width="650"
+        Title="memory optimizer" Height="300" Width="650"
         MinHeight="480" MinWidth="550"
         FontFamily="JetBrains Mono, Consolas, Cascadia Code, Courier New, Monospace"
         Loaded="Window_Loaded" Closing="Window_Closing"
@@ -327,7 +328,7 @@
             </Grid>
 
             <DockPanel Grid.Row="1" Margin="10,5,10,0">
-                 <TextBlock Text="> simit's memory optimizer" DockPanel.Dock="Left" Style="{StaticResource HeaderTextStyle}"/>
+                 <TextBlock Text="> rambo" DockPanel.Dock="Left" Style="{StaticResource HeaderTextStyle}"/>
                  <TextBlock x:Name="AdminStatusText" Text="[User]" DockPanel.Dock="Right" HorizontalAlignment="Right" Margin="5,0" FontWeight="Bold" Foreground="{StaticResource CliYellow}"/>
                  <TextBlock x:Name="TotalRamText" Text="total ram: --- GB" DockPanel.Dock="Right" HorizontalAlignment="Right" Margin="5,0" Foreground="{StaticResource CliBlue}"/>
             </DockPanel>
@@ -345,7 +346,7 @@
                     Height="45"
                     FontSize="16"/>
 
-            <GroupBox Header="top memory yoinkers" Grid.Row="4" Margin="10,0,10,5">
+            <GroupBox Header="top memory consumers" Grid.Row="4" Margin="10,0,10,5">
                  <ListView x:Name="ProcessListView"
                           ItemsSource="{Binding Processes}"
                           Style="{StaticResource CliListViewStyle}"
