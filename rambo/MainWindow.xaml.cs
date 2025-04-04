@@ -14,7 +14,7 @@ using System.Windows.Threading; // For DispatcherTimer
 using Microsoft.Win32; // For Registry access
 using System.Windows.Controls; // Required for Button
 
-namespace MemoryOptimizerWPF
+namespace rambo
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -74,7 +74,7 @@ namespace MemoryOptimizerWPF
         private bool _isOptimizing = false;
         private DispatcherTimer _refreshTimer;
         private const string AppRegistryKey = @"SOFTWARE\Microsoft\Windows\CurrentVersion\Run";
-        private const string AppRegistryValueName = "SimitsMemoryOptimizerWPF_CLI"; // Unique name
+        private const string AppRegistryValueName = "rambo";
 
         // --- Process List ---
         public class ProcessInfo
@@ -333,7 +333,7 @@ namespace MemoryOptimizerWPF
 
             _isOptimizing = false;
             OptimizeButton.IsEnabled = true;
-            OptimizeButton.Content = "_Optimize Memory";
+            OptimizeButton.Content = ">_optimize memory";
         }
 
 
@@ -381,7 +381,7 @@ namespace MemoryOptimizerWPF
         private void UpdateAdminStatusUI()
         {
              Dispatcher.Invoke(() => {
-                 AdminStatusText.Text = _isAdmin ? "[Admin]" : "[User]";
+                 AdminStatusText.Text = _isAdmin ? "[admin]" : "[user]";
                  AdminStatusText.Foreground = _isAdmin ? _cliGreen : _cliYellow;
                  AdminStatusText.ToolTip = _isAdmin ? "Running with Administrator privileges." : "Running as standard user. Some operations might be limited.";
              });
@@ -389,7 +389,7 @@ namespace MemoryOptimizerWPF
 
         private void UpdateMemoryDetailUI()
         {
-            TotalRamText.Text = $"Total RAM: {BytesToGB(_totalPhysicalMemoryBytes):N1} GB";
+            TotalRamText.Text = $"total ram: {BytesToGB(_totalPhysicalMemoryBytes):N1} gb";
         }
 
         // === UPDATED METHOD for Text-Based Bar ===
@@ -407,7 +407,7 @@ namespace MemoryOptimizerWPF
             bar.Append(emptyChar, barWidth - filledBlocks);
             bar.Append(']');
 
-            string barText = $"RAM Usage: {bar} {_percentUsed,3}%  (Used: {BytesToGB(_usedMemoryBytes):N1} / {BytesToGB(_totalPhysicalMemoryBytes):N1} GB)";
+            string barText = $"ram usage: {bar} {_percentUsed,3}%  (used: {BytesToGB(_usedMemoryBytes):N1} / {BytesToGB(_totalPhysicalMemoryBytes):N1} gb)";
 
             MemoryBarText.Text = barText;
 

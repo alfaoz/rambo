@@ -1,9 +1,9 @@
-﻿<Window x:Class="MemoryOptimizerWPF.MainWindow"
+﻿<Window x:Class="rambo.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:MemoryOptimizerWPF"
+        xmlns:local="clr-namespace:rambo"
         mc:Ignorable="d"
         Title="smt_memoptx64_rambov3" Height="300" Width="650"
         MinHeight="480" MinWidth="550"
@@ -333,7 +333,7 @@
             </DockPanel>
 
             <Border Grid.Row="2" BorderBrush="{StaticResource CliBorder}" BorderThickness="1" Padding="8,5" Margin="10,5,10,5">
-                 <TextBlock x:Name="MemoryBarText" Text="ram Usage: [loading...] --%" Foreground="{StaticResource CliForeground}" />
+                 <TextBlock x:Name="MemoryBarText" Text="ram usage: [loading...] --%" Foreground="{StaticResource CliForeground}" />
             </Border>
 
             <Button x:Name="OptimizeButton"
